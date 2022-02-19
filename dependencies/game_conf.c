@@ -6,7 +6,7 @@
 /*   By: nelidris <nelidris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 20:28:51 by nelidris          #+#    #+#             */
-/*   Updated: 2022/02/08 21:15:40 by nelidris         ###   ########.fr       */
+/*   Updated: 2022/02/18 13:21:54 by nelidris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ t_game_set	*set_up_game(char **map, t_character_set *character)
 	game->mlx = mlx_init();
 	game->map = map;
 	game->count = 0;
+	game->game_status = 0;
 	game->character = character;
 	game->win = mlx_new_window(game->mlx, width, height, "so_long");
 	return (game);

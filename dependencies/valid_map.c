@@ -6,7 +6,7 @@
 /*   By: nelidris <nelidris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 13:07:44 by nelidris          #+#    #+#             */
-/*   Updated: 2022/02/09 11:17:37 by nelidris         ###   ########.fr       */
+/*   Updated: 2022/02/18 11:33:45 by nelidris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	valid_map_conf(char *map)
 	if (map[i] == '\n')
 		return (1);
 	while ((map[i] == 'P' || map[i] == '1' || map[i] == '0'
-			|| map[i] == 'E' || map[i] == 'C' || map[i] == 'H'
+			|| map[i] == 'E' || map[i] == 'C' || map[i] == 'G'
 			|| map[i] == '\n') && map[i])
 	{
 		if (map[i] == '\n' && map[i + 1] == '\n')

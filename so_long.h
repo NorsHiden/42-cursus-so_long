@@ -6,7 +6,7 @@
 /*   By: nelidris <nelidris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 10:31:58 by nelidris          #+#    #+#             */
-/*   Updated: 2022/02/08 21:52:12 by nelidris         ###   ########.fr       */
+/*   Updated: 2022/02/19 10:11:44 by nelidris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 # include "ft_printf/ft_printf.h"
 
 # define BUFFER_SIZE 4096
+# define IN_GAME 0
+# define DEFEAT 1
+# define VICTORY 2
 
 /*______________structs______________*/
 
@@ -39,6 +42,7 @@ typedef struct config_game
 	int				count;
 	int				height;
 	int				width;
+	int				game_status;
 	t_character_set	*character;
 }	t_game_set;
 
@@ -58,18 +62,24 @@ void			moveup_player(t_game_set *game);
 void			movedown_player(t_game_set *game);
 void			moveleft_player(t_game_set *game);
 void			moveright_player(t_game_set *game);
+void			enemy_movement(t_game_set *game);
+void			moveup_enemy(t_game_set *game, int x, int y);
+void			movedown_enemy(t_game_set *game, int x, int y);
+void			moveleft_enemy(t_game_set *game, int x, int y);
+void			moveright_enemy(t_game_set *game, int x, int y);
 
 /*______________display______________*/
 void			display_img(t_game_set *game,
 					char *filename, size_t x, size_t y);
 void			put_tileset(t_game_set *game, size_t y, size_t x);
 void			display_map(t_game_set *game);
+int				display_rock(t_game_set *game);
 void			display_character(t_game_set *game,
 					t_character_set *character);
 
 /*______________animation______________*/
-int				col_an(t_game_set *game);
-void			change_an(t_game_set *game,
+int				game_animation(t_game_set *game);
+void			change_animation(t_game_set *game,
 					char *filenamegrass, char *filenameleg);
 
 /*______________utils______________*/

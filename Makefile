@@ -6,7 +6,7 @@
 #    By: nelidris <nelidris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/22 10:16:37 by nelidris          #+#    #+#              #
-#    Updated: 2022/02/08 20:44:48 by nelidris         ###   ########.fr        #
+#    Updated: 2022/02/19 10:09:16 by nelidris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRCS =	dependencies/error_handler.c dependencies/launcher.c dependencies/valid_map.c \
 		dependencies/so_long.c dependencies/animation.c dependencies/displays.c \
-		dependencies/game_conf.c dependencies/player_directions.c dependencies/utils.c
+		dependencies/game_conf.c dependencies/player_directions.c dependencies/utils.c \
+		dependencies/enemy_directions.c
 
 OBJS = $(SRCS:.c=.o)
 
