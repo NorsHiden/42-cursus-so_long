@@ -6,7 +6,7 @@
 #    By: nelidris <nelidris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/22 10:16:37 by nelidris          #+#    #+#              #
-#    Updated: 2022/02/19 10:09:16 by nelidris         ###   ########.fr        #
+#    Updated: 2022/02/19 10:36:02 by nelidris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	make all bonus -C libft
 	make all -C ft_printf
-	$(CC) $(CFLAGS) -l mlx -framework OpenGL -framework Appkit $(LIBFT) $(FT_PRINTF) $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) -l mlx -framework OpenGL -framework Appkit $(LIBFT) $(FT_PRINTF) $(OBJS) -o $(NAME) -g -fsanitize=address
 	
 bonus: $(NAME)
 

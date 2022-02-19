@@ -6,7 +6,7 @@
 /*   By: nelidris <nelidris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 11:47:03 by nelidris          #+#    #+#             */
-/*   Updated: 2022/02/19 09:36:31 by nelidris         ###   ########.fr       */
+/*   Updated: 2022/02/19 15:08:25 by nelidris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int	keycode(int keycode, t_game_set *game)
 		movedown_player(game);
 	else if (keycode == 53)
 		exit(0);
-	display_rock(game);
+	if (game->game_status == IN_GAME)
+		display_rock(game);
 	return (0);
 }
 
@@ -49,7 +50,7 @@ void	display_mobs(t_game_set *game)
 			if (game->map[y][x] == 'G')
 				display_img(game, "tilesets_xpm/endown.xpm", x, y);
 			else if (game->map[y][x] == 'C')
-				display_img(game, "tilesets_xpm/leg.xpm", x, y);
+				display_img(game, "tilesets_xpm/jewelry.xpm", x, y);
 			else if (game->map[y][x] == 'E')
 				display_img(game, "tilesets_xpm/door.xpm", x, y);
 			x++;
