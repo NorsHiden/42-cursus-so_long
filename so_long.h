@@ -6,17 +6,16 @@
 /*   By: nelidris <nelidris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 10:31:58 by nelidris          #+#    #+#             */
-/*   Updated: 2022/02/19 10:11:44 by nelidris         ###   ########.fr       */
+/*   Updated: 2022/02/20 07:13:08 by nelidris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include <stdio.h>
 # include <fcntl.h>
 # include <mlx.h>
-# include "ft_printf/ft_printf.h"
+# include "libft/libft.h"
 
 # define BUFFER_SIZE 4096
 # define IN_GAME 0
