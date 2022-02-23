@@ -6,7 +6,7 @@
 #    By: nelidris <nelidris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/09 10:17:55 by nelidris          #+#    #+#              #
-#    Updated: 2021/11/12 16:24:34 by nelidris         ###   ########.fr        #
+#    Updated: 2022/02/23 09:56:06 by nelidris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-AR = ar rs
+AR = ar rcs
 
 NAME = libft.a
 
