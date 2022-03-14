@@ -6,7 +6,7 @@
 /*   By: nelidris <nelidris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 20:33:00 by nelidris          #+#    #+#             */
-/*   Updated: 2022/02/20 07:09:53 by nelidris         ###   ########.fr       */
+/*   Updated: 2022/02/28 10:42:01 by nelidris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,7 @@ void	put_text(t_game_set *game)
 		display_img(game, "tilesets_xpm/wall_mid_up.xpm", x++, 0);
 	str = ft_itoa(game->count++);
 	mlx_string_put(game->mlx, game->win, 32, 0, 0x00ffffff, str);
+	write(1, str, ft_strlen(str));
+	write(1, "\n", 1);
 	free(str);
 }
