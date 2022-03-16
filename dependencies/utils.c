@@ -49,7 +49,7 @@ void	put_text(t_game_set *game)
 
 	x = 1;
 	while (x < 5)
-		display_img(game, "tilesets_xpm/wall_mid_up.xpm", x++, 0);
+		display_img(game, game->tiles.wall_mid_up, x++, 0);
 	str = ft_itoa(game->count++);
 	mlx_string_put(game->mlx, game->win, 32, 0, 0x00ffffff, str);
 	write(1, str, ft_strlen(str));

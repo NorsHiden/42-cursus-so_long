@@ -19,21 +19,21 @@ void	moveup_player(t_game_set *game)
 
 	x = game->character->x;
 	y = game->character->y;
-	display_img(game, "tilesets_xpm/grass_2.xpm", x, y);
+	display_img(game, game->tiles.grass, x, y);
 	if (game->map[y - 1][x] == 'E' && check_col(game))
 		game->game_status = VICTORY;
 	else if ((game->map[y - 1][x] == '0' || game->map[y - 1][x] == 'C')
 		&& game->map[y - 1][x] != 'E')
 	{
-		display_img(game, "tilesets_xpm/grass_2.xpm", x, (y - 1));
-		display_img(game, "tilesets_xpm/up.xpm", x, (y - 1));
+		display_img(game, game->tiles.grass, x, (y - 1));
+		display_img(game, game->tiles.playerup, x, (y - 1));
 		game->map[y - 1][x] = 'P';
 		game->map[y][x] = '0';
 		game->character->y--;
 		put_text(game);
 	}
 	else
-		display_img(game, "tilesets_xpm/up.xpm", x, y);
+		display_img(game, game->tiles.playerup, x, y);
 }
 
 void	moveleft_player(t_game_set *game)
@@ -43,21 +43,21 @@ void	moveleft_player(t_game_set *game)
 
 	x = game->character->x;
 	y = game->character->y;
-	display_img(game, "tilesets_xpm/grass_2.xpm", x, y);
+	display_img(game, game->tiles.grass, x, y);
 	if (game->map[y][x - 1] == 'E' && check_col(game))
 		game->game_status = VICTORY;
 	else if ((game->map[y][x - 1] == '0' || game->map[y][x - 1] == 'C')
 		&& game->map[y][x - 1] != 'E')
 	{
-		display_img(game, "tilesets_xpm/grass_2.xpm", (x - 1), y);
-		display_img(game, "tilesets_xpm/left.xpm", (x - 1), y);
+		display_img(game, game->tiles.grass, (x - 1), y);
+		display_img(game, game->tiles.playerleft, (x - 1), y);
 		game->map[y][x - 1] = 'P';
 		game->map[y][x] = '0';
 		game->character->x--;
 		put_text(game);
 	}
 	else
-		display_img(game, "tilesets_xpm/left.xpm", x, y);
+		display_img(game, game->tiles.playerleft, x, y);
 }
 
 void	movedown_player(t_game_set *game)
@@ -67,21 +67,21 @@ void	movedown_player(t_game_set *game)
 
 	x = game->character->x;
 	y = game->character->y;
-	display_img(game, "tilesets_xpm/grass_2.xpm", x, y);
+	display_img(game, game->tiles.grass, x, y);
 	if (game->map[y + 1][x] == 'E' && check_col(game))
 		game->game_status = VICTORY;
 	if ((game->map[y + 1][x] == '0' || game->map[y + 1][x] == 'C')
 		&& game->map[y + 1][x] != 'E')
 	{
-		display_img(game, "tilesets_xpm/grass_2.xpm", x, (y + 1));
-		display_img(game, "tilesets_xpm/down.xpm", x, (y + 1));
+		display_img(game, game->tiles.grass, x, (y + 1));
+		display_img(game, game->tiles.playerdown, x, (y + 1));
 		game->map[y + 1][x] = 'P';
 		game->map[y][x] = '0';
 		game->character->y++;
 		put_text(game);
 	}
 	else
-		display_img(game, "tilesets_xpm/down.xpm", x, y);
+		display_img(game, game->tiles.playerdown, x, y);
 }
 
 void	moveright_player(t_game_set *game)
@@ -91,19 +91,19 @@ void	moveright_player(t_game_set *game)
 
 	x = game->character->x;
 	y = game->character->y;
-	display_img(game, "tilesets_xpm/grass_2.xpm", x, y);
+	display_img(game, game->tiles.grass, x, y);
 	if (game->map[y][x + 1] == 'E' && check_col(game))
 		game->game_status = VICTORY;
 	if ((game->map[y][x + 1] == '0' || game->map[y][x + 1] == 'C')
 		&& game->map[y][x + 1] != 'E')
 	{
-		display_img(game, "tilesets_xpm/grass_2.xpm", (x + 1), y);
-		display_img(game, "tilesets_xpm/right.xpm", (x + 1), y);
+		display_img(game, game->tiles.grass, (x + 1), y);
+		display_img(game, game->tiles.playerright, (x + 1), y);
 		game->map[y][x + 1] = 'P';
 		game->map[y][x] = '0';
 		game->character->x++;
 		put_text(game);
 	}
 	else
-		display_img(game, "tilesets_xpm/right.xpm", x, y);
+		display_img(game, game->tiles.playerright, x, y);
 }

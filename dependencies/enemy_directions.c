@@ -16,44 +16,44 @@ void	moveup_enemy(t_game_set *game, int x, int y)
 {
 	game->map[y][x] = '0';
 	game->map[y - 1][x] = 'Q';
-	display_img(game, "tilesets_xpm/grass_2.xpm", x, y);
-	display_img(game, "tilesets_xpm/enup.xpm", x, y - 1);
+	display_img(game, game->tiles.grass, x, y);
+	display_img(game, game->tiles.enemyup, x, y - 1);
 	if (game->map[y - 2][x] == 'P')
 		game->game_status = DEFEAT;
-	display_img(game, "tilesets_xpm/grass_2.xpm", x, y);
+	display_img(game, game->tiles.grass, x, y);
 }
 
 void	movedown_enemy(t_game_set *game, int x, int y)
 {
 	game->map[y][x] = '0';
 	game->map[y + 1][x] = 'Q';
-	display_img(game, "tilesets_xpm/grass_2.xpm", x, y);
-	display_img(game, "tilesets_xpm/endown.xpm", x, y + 1);
+	display_img(game, game->tiles.grass, x, y);
+	display_img(game, game->tiles.enemydown, x, y + 1);
 	if (game->map[y + 2][x] == 'P')
 		game->game_status = DEFEAT;
-	display_img(game, "tilesets_xpm/grass_2.xpm", x, y);
+	display_img(game, game->tiles.grass, x, y);
 }
 
 void	moveleft_enemy(t_game_set *game, int x, int y)
 {
 	game->map[y][x] = '0';
 	game->map[y][x - 1] = 'Q';
-	display_img(game, "tilesets_xpm/grass_2.xpm", x, y);
-	display_img(game, "tilesets_xpm/enleft.xpm", x - 1, y);
+	display_img(game, game->tiles.grass, x, y);
+	display_img(game, game->tiles.enemyleft, x - 1, y);
 	if (game->map[y][x - 2] == 'P')
 		game->game_status = DEFEAT;
-	display_img(game, "tilesets_xpm/grass_2.xpm", x, y);
+	display_img(game, game->tiles.grass, x, y);
 }
 
 void	moveright_enemy(t_game_set *game, int x, int y)
 {
 	game->map[y][x] = '0';
 	game->map[y][x + 1] = 'Q';
-	display_img(game, "tilesets_xpm/grass_2.xpm", x, y);
-	display_img(game, "tilesets_xpm/enright.xpm", x + 1, y);
+	display_img(game, game->tiles.grass, x, y);
+	display_img(game, game->tiles.enemyright, x + 1, y);
 	if (game->map[y][x + 2] == 'P')
 		game->game_status = DEFEAT;
-	display_img(game, "tilesets_xpm/grass_2.xpm", x, y);
+	display_img(game, game->tiles.grass, x, y);
 }
 
 void	enemy_movement(t_game_set *game)
